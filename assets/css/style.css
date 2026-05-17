@@ -284,9 +284,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .hero {
+    .hero-container {
         grid-template-columns: 1fr;
-        padding-top: 3rem;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
         text-align: center;
     }
     .hero-text h1 {
@@ -294,5 +295,21 @@ input[type="range"]::-webkit-slider-thumb {
     }
     .hero-text p {
         margin: 0 auto 2rem;
+    }
+    nav {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+    }
+    .btn-admin {
+        position: relative;
+        right: 0;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    .calculator-card {
+        padding: 1.5rem;
+    }
+    .carousel-slide {
+        aspect-ratio: 16/9;
     }
 }

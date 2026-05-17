@@ -252,6 +252,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             display: block;
             text-align: center;
         }
+        
+        @media (max-width: 768px) {
+            .apply-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width, .span-2 {
+                grid-column: span 1;
+            }
+            .modal-content {
+                padding: 1.5rem;
+            }
+            .modal-footer {
+                grid-template-columns: 1fr;
+            }
+            .btn-modal {
+                grid-column: span 1 !important;
+            }
+        }
     </style>
 </head>
 <body>

@@ -185,6 +185,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             display: flex;
             justify-content: center;
         }
+
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 2.5rem 1.5rem;
+            }
+            .login-card h2 {
+                font-size: 1.5rem;
+            }
+            .logo-wrap a {
+                font-size: 1.4rem !important;
+            }
+        }
     </style>
 </head>
 <body>

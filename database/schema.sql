@@ -48,6 +48,8 @@ CREATE TABLE IF NOT EXISTS loans (
     total_payable DECIMAL(15, 2) NOT NULL,
     duration_months INT NOT NULL,
     status ENUM('pending', 'approved', 'rejected', 'disbursed', 'paid', 'defaulted') DEFAULT 'pending',
+    checkout_request_id VARCHAR(100) NULL,
+    processing_fee_paid TINYINT(1) DEFAULT 0,
     applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     approved_at TIMESTAMP NULL,
     disbursed_at TIMESTAMP NULL,

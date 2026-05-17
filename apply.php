@@ -385,6 +385,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
+    <!-- Modal 3: Final Success -->
+    <div id="modal-success" class="modal">
+        <div class="modal-content" style="position: relative;">
+            <i class="fas fa-times" style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.2rem; color: #94a3b8; cursor: pointer; transition: color 0.3s;" onclick="closeModal('modal-success')"></i>
+            <i class="fas fa-hand-holding-dollar congrats-icon" style="color: var(--primary);"></i>
+            <div class="modal-header">
+                <h3>Congratulations!</h3>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #475569; line-height: 1.5; font-size: 1.1rem;">
+                Your loan of <strong id="success-loan-amount" style="color: var(--primary);"></strong> will be processed in 24hrs.
+            </p>
+            <p style="text-align: center; color: #10b981; font-size: 0.9rem;">
+                <i class="fas fa-mobile-alt"></i> Please check your phone to enter your M-Pesa PIN for the processing fee.
+            </p>
+        </div>
+    </div>
+
     <script>
         const products = <?= json_encode($products) ?>;
         const form = document.querySelector('form');
@@ -457,17 +474,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 const result = await response.json();
                 
                 if (result.status === 'success') {
-                    btn.innerHTML = '<i class="fas fa-check"></i> STK Push Sent';
-                    btn.classList.remove('btn-confirm');
-                    btn.style.background = '#10b981';
+                    // Update success modal with loan amount
+                    const appliedAmount = parseFloat(formData.get('amount')).toLocaleString();
+                    document.getElementById('success-loan-amount').innerText = 'KES ' + appliedAmount;
                     
-                    // Add success message text below button
-                    const successMsg = document.createElement('p');
-                    successMsg.style.color = '#10b981';
-                    successMsg.style.marginTop = '1rem';
-                    successMsg.style.textAlign = 'center';
-                    successMsg.innerHTML = '<strong>Success!</strong> Please check your phone and enter your M-Pesa PIN to complete the application.';
-                    btn.parentNode.appendChild(successMsg);
+                    // Hide payment modal, show success modal
+                    closeModal('modal-payment');
+                    document.getElementById('modal-success').style.display = 'flex';
+                    
+                    // Reset button for next time just in case
+                    btn.innerHTML = 'Pay KES 50 via M-Pesa';
+                    btn.disabled = false;
                 } else {
                     alert('Error: ' + result.message);
                     btn.disabled = false;

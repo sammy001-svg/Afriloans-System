@@ -1,7 +1,7 @@
 -- Loan Management System Database Schema
 
-CREATE DATABASE IF NOT EXISTS loan_system;
-USE loan_system;
+-- CREATE DATABASE IF NOT EXISTS loan_system;
+-- USE loan_system;
 
 -- Admins / Staff Table
 CREATE TABLE IF NOT EXISTS users (

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+Sitemap: http://localhost:8000/sitemap.xml

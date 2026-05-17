@@ -53,13 +53,13 @@ $products = fetchAll("SELECT * FROM loan_products");
                 <div class="carousel-container" style="margin-bottom: 2rem;">
                     <div class="carousel-track">
                         <div class="carousel-slide">
-                            <img src="assets/images/banner1.png?v=1.1" alt="Mary's Mobile Solutions">
+                            <img src="assets/images/banner1.webp" loading="lazy" alt="Mary's Mobile Solutions">
                         </div>
                         <div class="carousel-slide">
-                            <img src="assets/images/banner2.png?v=1.1" alt="Sarah's Fine Textiles">
+                            <img src="assets/images/banner2.webp" loading="lazy" alt="Sarah's Fine Textiles">
                         </div>
                         <div class="carousel-slide">
-                            <img src="assets/images/banner3.png?v=1.1" alt="Samuel's Precision Agri-Tech">
+                            <img src="assets/images/banner3.webp" loading="lazy" alt="Samuel's Precision Agri-Tech">
                         </div>
                     </div>
                     <div class="carousel-dots">

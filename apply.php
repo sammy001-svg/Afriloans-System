@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background: url('assets/images/apply-bg.png') no-repeat center center fixed;
+            background: url('assets/images/apply-bg.webp') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             position: relative;
